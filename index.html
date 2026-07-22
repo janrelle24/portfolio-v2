@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Janrelle Lubiano — Web Developer</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============ EDITOR TOP CHROME ============ -->
+<header class="editor-chrome">
+  <div class="chrome-top">
+    <div class="traffic-lights">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-amber"></span>
+      <span class="dot dot-green"></span>
+    </div>
+    <span class="chrome-path">janrelle-lubiano — portfolio — ~/src</span>
+    <span class="chrome-branch">⎇ main</span>
+  </div>
+  <nav class="tab-bar" id="tab-bar">
+    <button class="tab active" data-target="hero">index.js</button>
+    <button class="tab" data-target="about">about.md</button>
+    <button class="tab" data-target="skills">package.json</button>
+    <button class="tab" data-target="projects">projects/</button>
+    <button class="tab" data-target="experience">log.txt</button>
+    <button class="tab" data-target="contact">contact.sh</button>
+    <span class="tab-underline" id="tab-underline"></span>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="section hero">
+    <div class="gutter" aria-hidden="true"></div>
+    <div class="section-inner">
+      <div class="code-block">
+        <div class="code-line"><span class="tok-comment">// junior web developer, building full-stack apps end-to-end</span></div>
+        <div class="code-line"><span class="tok-keyword">const</span> developer <span class="tok-op">=</span> {</div>
+        <div class="code-line indent">name: <span class="tok-string">'Janrelle Lubiano'</span>,</div>
+        <div class="code-line indent">role: <span class="tok-string">'Web Developer'</span>,</div>
+        <div class="code-line indent">focus: [<span class="tok-string">'React'</span>, <span class="tok-string">'Node.js'</span>, <span class="tok-string">'MongoDB'</span>],</div>
+        <div class="code-line indent">status: <span id="typed-status"></span><span class="cursor">▌</span></div>
+        <div class="code-line">};</div>
+      </div>
+      <p class="hero-sub">I build full-stack web apps with authentication, REST APIs, and structured databases — from schema to UI.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">$ view --projects</a>
+        <a href="#contact" class="btn btn-ghost">$ run contact.sh</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section">
+    <div class="gutter" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="eyebrow"># about.md</p>
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <p class="about-text">
+          I'm a motivated, detail-oriented junior web developer with hands-on experience building
+          real-world web applications — from JWT-based authentication to REST API integration
+          and structured database design. I care about writing clean, maintainable code and
+          I'm constantly sharpening my skills across the full stack, from responsive front-end
+          interfaces to modular back-end architecture.
+        </p>
+        <ul class="about-facts">
+          <li><span class="fact-key">location</span><span class="fact-val">Tubay, Agusan del Norte, PH</span></li>
+          <li><span class="fact-key">phone</span><span class="fact-val">+63 966 724 5073</span></li>
+          <li><span class="fact-key">education</span><span class="fact-val">BS Computer Science, 2023</span></li>
+          <li><span class="fact-key">github</span><span class="fact-val"><a href="https://github.com/janrelle24" target="_blank" rel="noopener">janrelle24</a></span></li>
+          <li><span class="fact-key">resume</span><span class="fact-val"><a href="resume.pdf" target="_blank" rel="noopener">download.pdf</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section">
+    <div class="gutter" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="eyebrow"># package.json</p>
+      <h2 class="section-title">Skills &amp; Tools</h2>
+      <div class="skills-grid">
+
+        <div class="skill-pkg">
+          <p class="pkg-name">"dependencies"</p>
+          <ul class="pkg-list">
+            <li><span class="tok-string">"javascript"</span>: <span class="tok-string">"latest"</span></li>
+            <li><span class="tok-string">"react"</span>: <span class="tok-string">"latest"</span></li>
+            <li><span class="tok-string">"node"</span>: <span class="tok-string">"latest"</span></li>
+            <li><span class="tok-string">"html-css"</span>: <span class="tok-string">"latest"</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-pkg">
+          <p class="pkg-name">"devDependencies"</p>
+          <ul class="pkg-list">
+            <li><span class="tok-string">"mongodb"</span>: <span class="tok-string">"latest"</span></li>
+            <li><span class="tok-string">"sql"</span>: <span class="tok-string">"latest"</span></li>
+            <li><span class="tok-string">"rest-api"</span>: <span class="tok-string">"latest"</span></li>
+            <li><span class="tok-string">"jwt-auth"</span>: <span class="tok-string">"latest"</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-pkg">
+          <p class="pkg-name">"peerDependencies"</p>
+          <ul class="pkg-list">
+            <li><span class="tok-string">"clean-code"</span>: <span class="tok-string">"strong"</span></li>
+            <li><span class="tok-string">"self-learning"</span>: <span class="tok-string">"active"</span></li>
+            <li><span class="tok-string">"problem-solving"</span>: <span class="tok-string">"strong"</span></li>
+            <li><span class="tok-string">"attention-to-detail"</span>: <span class="tok-string">"high"</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section">
+    <div class="gutter" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="eyebrow"># projects/</p>
+      <h2 class="section-title">Selected Projects</h2>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-head">
+            <span class="file-icon">JS</span>
+            <span class="file-name">cbr-dashboard/</span>
+          </div>
+          <h3 class="project-title">CBR Dashboard System</h3>
+          <p class="project-desc">Secure administrative dashboard for managing city content and data — JWT-based auth, protected routes, and full CRUD for news, events, ordinances, and members, backed by structured MongoDB schemas.</p>
+          <div class="project-tags">
+            <span class="tag tag-a">Node.js</span>
+            <span class="tag tag-b">MongoDB</span>
+            <span class="tag tag-c">JWT Auth</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/janrelle24/crbDashboard" target="_blank" rel="noopener">source →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <span class="file-icon">JS</span>
+            <span class="file-name">cbr-website/</span>
+          </div>
+          <h3 class="project-title">CBR Public Website</h3>
+          <p class="project-desc">Dynamic public information platform connected to the dashboard via REST APIs, with real-time data fetching, search, pagination, and modular responsive UI components.</p>
+          <div class="project-tags">
+            <span class="tag tag-a">React</span>
+            <span class="tag tag-b">REST API</span>
+            <span class="tag tag-c">Responsive UI</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/janrelle24/cbrWebsite" target="_blank" rel="noopener">source →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <span class="file-icon">JS</span>
+            <span class="file-name">notebook-app/</span>
+          </div>
+          <h3 class="project-title">Notebook App</h3>
+          <p class="project-desc">Full-stack note-taking application with user authentication, complete CRUD functionality, and a modular back-end architecture with protected routes.</p>
+          <div class="project-tags">
+            <span class="tag tag-a">Node.js</span>
+            <span class="tag tag-b">Auth</span>
+            <span class="tag tag-c">CRUD</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/janrelle24/note" target="_blank" rel="noopener">source →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE (git log style) ============ -->
+  <section id="experience" class="section">
+    <div class="gutter" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="eyebrow"># log.txt</p>
+      <h2 class="section-title">Journey</h2>
+      <div class="git-log">
+
+        <div class="commit">
+          <div class="commit-line">
+            <span class="commit-hash">f4a1c02</span>
+            <span class="commit-date">2026</span>
+          </div>
+          <p class="commit-msg">Built <strong>CBR Dashboard System</strong> &amp; <strong>CBR Public Website</strong></p>
+          <p class="commit-body">Designed a full-stack, JWT-secured admin dashboard paired with a public-facing site consuming its REST APIs in real time.</p>
+        </div>
+
+        <div class="commit">
+          <div class="commit-line">
+            <span class="commit-hash">b8e2d91</span>
+            <span class="commit-date">2025</span>
+          </div>
+          <p class="commit-msg">Built the <strong>Notebook App</strong></p>
+          <p class="commit-body">First full-stack project with user authentication and complete CRUD functionality — where the back-end fundamentals clicked.</p>
+        </div>
+
+        <div class="commit">
+          <div class="commit-line">
+            <span class="commit-hash">2c9f7a5</span>
+            <span class="commit-date">2023</span>
+          </div>
+          <p class="commit-msg">Graduated — <strong>BS Computer Science</strong></p>
+          <p class="commit-body">Caraga State University, Main Campus. Now building real-world projects and looking for a junior web developer role.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section">
+    <div class="gutter" aria-hidden="true"></div>
+    <div class="section-inner">
+      <p class="eyebrow"># contact.sh</p>
+      <h2 class="section-title">Let's Talk</h2>
+      <p class="contact-sub">Have a role, a project, or just want to say hi? Run the script below.</p>
+
+      <form class="terminal-form" id="contact-form">
+        <div class="terminal-window">
+          <div class="terminal-row">
+            <span class="prompt">$</span>
+            <label for="name" class="sr-only">Name</label>
+            <input type="text" id="name" name="name" placeholder="--name 'Your Name'" required>
+          </div>
+          <div class="terminal-row">
+            <span class="prompt">$</span>
+            <label for="email" class="sr-only">Email</label>
+            <input type="email" id="email" name="email" placeholder="--email 'you@example.com'" required>
+          </div>
+          <div class="terminal-row terminal-row-textarea">
+            <span class="prompt">$</span>
+            <label for="message" class="sr-only">Message</label>
+            <textarea id="message" name="message" rows="3" placeholder="--message 'Say something...'" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-run">▶ run send-message</button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <div class="social-row">
+        <a href="https://github.com/janrelle24" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://v1-portfolio-website.netlify.app/projects" target="_blank" rel="noopener">Live Site</a>
+        <a href="mailto:lubianojanrelle@gmail.com">Email</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>// built with HTML, CSS &amp; JS — <span id="year"></span> Janrelle Lubiano</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
