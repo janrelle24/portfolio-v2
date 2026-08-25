@@ -7,268 +7,315 @@
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- ============ EDITOR TOP CHROME ============ -->
-<header class="editor-chrome">
-  <div class="chrome-top">
-    <div class="traffic-lights">
-      <span class="dot dot-red"></span>
-      <span class="dot dot-amber"></span>
-      <span class="dot dot-green"></span>
-    </div>
-    <span class="chrome-path">janrelle-lubiano — portfolio — ~/src</span>
-    <span class="chrome-branch">⎇ main</span>
-  </div>
-  <nav class="tab-bar" id="tab-bar">
-    <button class="tab active" data-target="hero">index.js</button>
-    <button class="tab" data-target="about">about.md</button>
-    <button class="tab" data-target="skills">package.json</button>
-    <button class="tab" data-target="projects">projects/</button>
-    <button class="tab" data-target="experience">log.txt</button>
-    <button class="tab" data-target="contact">contact.sh</button>
-    <span class="tab-underline" id="tab-underline"></span>
-  </nav>
-</header>
+<div class="scroll-progress" aria-hidden="true">
+  <div class="scroll-progress-fill" id="scroll-progress-fill"></div>
+</div>
 
-<main>
+<div class="layout">
 
-  <!-- ============ HERO ============ -->
-  <section id="hero" class="section hero">
-    <div class="gutter" aria-hidden="true"></div>
-    <div class="section-inner">
-      <div class="code-block">
-        <div class="code-line"><span class="tok-comment">// junior web developer, building full-stack apps end-to-end</span></div>
-        <div class="code-line"><span class="tok-keyword">const</span> developer <span class="tok-op">=</span> {</div>
-        <div class="code-line indent">name: <span class="tok-string">'Janrelle Lubiano'</span>,</div>
-        <div class="code-line indent">role: <span class="tok-string">'Web Developer'</span>,</div>
-        <div class="code-line indent">focus: [<span class="tok-string">'React'</span>, <span class="tok-string">'Node.js'</span>, <span class="tok-string">'MongoDB'</span>],</div>
-        <div class="code-line indent">status: <span id="typed-status"></span><span class="cursor">▌</span></div>
-        <div class="code-line">};</div>
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <button class="theme-toggle" id="theme-toggle-desktop" aria-label="Switch to dark mode">🌙</button>
+    <div class="sidebar-top">
+      <div class="profile-photo">
+        <img src="img/JanrelleGradPic.jpg" alt="Janrelle Lubiano" onerror="this.parentElement.classList.add('no-photo')">
+        <span class="profile-fallback">JL</span>
       </div>
-      <p class="hero-sub">I build full-stack web apps with authentication, REST APIs, and structured databases — from schema to UI.</p>
+      <p class="sidebar-name">Janrelle L. Lubiano</p>
+      <p class="sidebar-role">Web Developer</p>
+      <p class="status-pill"><span class="status-dot"></span>Available for junior roles</p>
+      <p class="local-time" id="local-time"></p>
+    </div>
+
+    <nav class="side-nav" id="side-nav">
+      <span class="nav-indicator" id="nav-indicator"></span>
+      <button class="nav-link active" data-target="about"><span class="nav-index">01</span>About</button>
+      <button class="nav-link" data-target="skills"><span class="nav-index">02</span>Skills</button>
+      <button class="nav-link" data-target="work"><span class="nav-index">03</span>Work</button>
+      <button class="nav-link" data-target="journey"><span class="nav-index">04</span>Journey</button>
+      <button class="nav-link" data-target="contact"><span class="nav-index">05</span>Contact</button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <a href="mailto:lubianojanrelle@gmail.com">lubianojanrelle@gmail.com</a>
+      <a href="tel:+639667245073">+63 966 724 5073</a>
+      <div class="sidebar-links">
+        <a href="https://github.com/janrelle24" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- mobile-only top bar -->
+  <header class="mobile-bar">
+    <p class="mobile-name">Janrelle Lubiano</p>
+    <div class="mobile-bar-actions">
+      <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Switch to dark mode">🌙</button>
+      <button class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="side-nav">Menu</button>
+    </div>
+  </header>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="content">
+
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero-eyebrow">Web Developer · Tubay, Agusan del Norte, PH</p>
+      <h1 class="hero-title">Building full-stack web apps, one clean commit at a time.</h1>
+      <p class="hero-sub">
+        Junior web developer with hands-on experience shipping real applications —
+        secure authentication, REST APIs, and structured databases, backed by a
+        Computer Science degree and a habit of writing code I'm proud to hand off.
+      </p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">$ view --projects</a>
-        <a href="#contact" class="btn btn-ghost">$ run contact.sh</a>
+        <a href="#work" class="btn btn-primary">View my work</a>
+        <a href="#contact" class="btn btn-secondary">Get in touch</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section id="about" class="section">
-    <div class="gutter" aria-hidden="true"></div>
-    <div class="section-inner">
-      <p class="eyebrow"># about.md</p>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <p class="eyebrow">01 / About</p>
       <h2 class="section-title">About</h2>
       <div class="about-grid">
         <p class="about-text">
-          I'm a motivated, detail-oriented junior web developer with hands-on experience building
-          real-world web applications — from JWT-based authentication to REST API integration
-          and structured database design. I care about writing clean, maintainable code and
-          I'm constantly sharpening my skills across the full stack, from responsive front-end
-          interfaces to modular back-end architecture.
+          I'm a detail-oriented junior web developer who enjoys taking a project from a
+          blank schema to something people can actually use. My recent work spans
+          JWT-based authentication, REST API integration, and full CRUD systems backed
+          by structured MongoDB and SQL data models — with just as much attention paid
+          to the responsive front-end that sits on top. I'm still early in my career and
+          treat that as an advantage: I learn fast, ask good questions, and care about
+          writing code that's easy for the next person to read.
         </p>
-        <ul class="about-facts">
-          <li><span class="fact-key">location</span><span class="fact-val">Tubay, Agusan del Norte, PH</span></li>
-          <li><span class="fact-key">phone</span><span class="fact-val">+63 966 724 5073</span></li>
-          <li><span class="fact-key">education</span><span class="fact-val">BS Computer Science, 2023</span></li>
-          <li><span class="fact-key">github</span><span class="fact-val"><a href="https://github.com/janrelle24" target="_blank" rel="noopener">janrelle24</a></span></li>
-          <li><span class="fact-key">resume</span><span class="fact-val"><a href="resume.pdf" target="_blank" rel="noopener">download.pdf</a></span></li>
-        </ul>
+        <dl class="about-facts">
+          <div class="fact-row"><dt>Education</dt><dd>BS Computer Science, Caraga State University (2023)</dd></div>
+          <div class="fact-row"><dt>Location</dt><dd>Tubay, Agusan del Norte, Philippines</dd></div>
+          <div class="fact-row"><dt>Focus</dt><dd>React, Node.js, MongoDB</dd></div>
+          <div class="fact-row"><dt>Looking for</dt><dd>Junior web developer roles</dd></div>
+        </dl>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ SKILLS ============ -->
-  <section id="skills" class="section">
-    <div class="gutter" aria-hidden="true"></div>
-    <div class="section-inner">
-      <p class="eyebrow"># package.json</p>
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <p class="eyebrow">02 / Skills</p>
       <h2 class="section-title">Skills &amp; Tools</h2>
-      <div class="skills-grid">
 
-        <div class="skill-pkg">
-          <p class="pkg-name">"dependencies"</p>
-          <ul class="pkg-list">
-            <li><span class="tok-string">"javascript"</span>: <span class="tok-string">"latest"</span></li>
-            <li><span class="tok-string">"react"</span>: <span class="tok-string">"latest"</span></li>
-            <li><span class="tok-string">"node"</span>: <span class="tok-string">"latest"</span></li>
-            <li><span class="tok-string">"html-css"</span>: <span class="tok-string">"latest"</span></li>
-          </ul>
+      <div class="skills-groups">
+        <div class="skill-group">
+          <p class="skill-group-label">Languages &amp; Frameworks</p>
+          <div class="chip-row">
+            <span class="chip">JavaScript</span>
+            <span class="chip">React</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Express.js</span>
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3</span>
+            <span class="chip">Tailwind CSS</span>
+          </div>
         </div>
+        <div class="skill-group">
+          <p class="skill-group-label">Data &amp; APIs</p>
+          <div class="chip-row">
+            <span class="chip">MongoDB</span>
+            <span class="chip">SQL</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">JWT Authentication</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-label">AI &amp; Integrations</p>
+          <div class="chip-row">
+            <span class="chip">Google Gemini AI</span>
+            <span class="chip">Knowledge-Based AI Design</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-label">How I Work</p>
+          <div class="chip-row">
+            <span class="chip">Clean Code</span>
+            <span class="chip">Self-Directed Learning</span>
+            <span class="chip">Problem Solving</span>
+            <span class="chip">Attention to Detail</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="skill-pkg">
-          <p class="pkg-name">"devDependencies"</p>
-          <ul class="pkg-list">
-            <li><span class="tok-string">"mongodb"</span>: <span class="tok-string">"latest"</span></li>
-            <li><span class="tok-string">"sql"</span>: <span class="tok-string">"latest"</span></li>
-            <li><span class="tok-string">"rest-api"</span>: <span class="tok-string">"latest"</span></li>
-            <li><span class="tok-string">"jwt-auth"</span>: <span class="tok-string">"latest"</span></li>
-          </ul>
-        </div>
+    <!-- WORK -->
+    <section id="work" class="section">
+      <p class="eyebrow">03 / Work</p>
+      <h2 class="section-title">Selected Work</h2>
 
-        <div class="skill-pkg">
-          <p class="pkg-name">"peerDependencies"</p>
-          <ul class="pkg-list">
-            <li><span class="tok-string">"clean-code"</span>: <span class="tok-string">"strong"</span></li>
-            <li><span class="tok-string">"self-learning"</span>: <span class="tok-string">"active"</span></li>
-            <li><span class="tok-string">"problem-solving"</span>: <span class="tok-string">"strong"</span></li>
-            <li><span class="tok-string">"attention-to-detail"</span>: <span class="tok-string">"high"</span></li>
-          </ul>
-        </div>
+      <div class="work-list">
+
+        <article class="work-item">
+          <div class="work-thumb">
+            <!-- TODO: replace with a real screenshot, e.g. img/etanong-ai.jpg -->
+            <img src="img/e-tanong.png" alt="E-Tanong AI chat interface screenshot" onerror="this.parentElement.classList.add('no-thumb')">
+            <span class="thumb-fallback">E-Tanong<br>AI</span>
+          </div>
+          <div class="work-body">
+            <p class="work-index">P01 — 2026</p>
+            <h3 class="work-title">E-Tanong AI</h3>
+            <p class="work-desc">A full-stack AI chat platform that helps people understand government healthcare assistance programs and application requirements. Built with a modern chat interface — light/dark mode, suggested questions, typing indicators, and message history — backed by a Node.js/Express service integrating Google Gemini for grounded, knowledge-based responses. Designed to guide clearly without diagnosing conditions or prescribing treatment.</p>
+            <div class="work-tags">
+              <span class="tag">React</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">Gemini AI</span>
+            </div>
+            <!-- TODO: replace with the real repository URL once published -->
+            <a class="work-link" href="https://github.com/janrelle24" target="_blank" rel="noopener">View source ↗</a>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-thumb">
+            <img src="img/cbrDashboard.png" alt="CBR Dashboard System screenshot" onerror="this.parentElement.classList.add('no-thumb')">
+            <span class="thumb-fallback">CBR<br>Dashboard</span>
+          </div>
+          <div class="work-body">
+            <p class="work-index">P02 — 2026</p>
+            <h3 class="work-title">CBR Dashboard System</h3>
+            <p class="work-desc">A secure administrative dashboard for managing city content and data, with JWT-based authentication, protected routes, and full CRUD operations across news, events, ordinances, and members — backed by structured MongoDB schemas.</p>
+            <div class="work-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">JWT Auth</span>
+            </div>
+            <a class="work-link" href="https://github.com/janrelle24/crbDashboard" target="_blank" rel="noopener">View source ↗</a>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-thumb">
+            <img src="img/cbr-public-website.png" alt="CBR Public Website screenshot" onerror="this.parentElement.classList.add('no-thumb')">
+            <span class="thumb-fallback">CBR<br>Website</span>
+          </div>
+          <div class="work-body">
+            <p class="work-index">P03 — 2026</p>
+            <h3 class="work-title">CBR Public Website</h3>
+            <p class="work-desc">The public-facing counterpart to the dashboard — a dynamic information platform with real-time data fetching via REST APIs, plus search, pagination, and modular responsive UI components.</p>
+            <div class="work-tags">
+              <span class="tag">React</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Responsive UI</span>
+            </div>
+            <a class="work-link" href="https://github.com/janrelle24/cbrWebsite" target="_blank" rel="noopener">View source ↗</a>
+          </div>
+        </article>
+
+        <article class="work-item">
+          <div class="work-thumb">
+            <img src="img/notebook.png" alt="Notebook App screenshot" onerror="this.parentElement.classList.add('no-thumb')">
+            <span class="thumb-fallback">Notebook<br>App</span>
+          </div>
+          <div class="work-body">
+            <p class="work-index">P04 — 2025</p>
+            <h3 class="work-title">Notebook App</h3>
+            <p class="work-desc">A full-stack note-taking application with user authentication and complete CRUD functionality, built on a modular back-end architecture with protected routes.</p>
+            <div class="work-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Authentication</span>
+              <span class="tag">CRUD</span>
+            </div>
+            <a class="work-link" href="https://github.com/janrelle24/note" target="_blank" rel="noopener">View source ↗</a>
+          </div>
+        </article>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ PROJECTS ============ -->
-  <section id="projects" class="section">
-    <div class="gutter" aria-hidden="true"></div>
-    <div class="section-inner">
-      <p class="eyebrow"># projects/</p>
-      <h2 class="section-title">Selected Projects</h2>
-      <div class="projects-grid">
-
-        <article class="project-card">
-          <div class="project-head">
-            <span class="file-icon">JS</span>
-            <span class="file-name">cbr-dashboard/</span>
-          </div>
-          <h3 class="project-title">CBR Dashboard System</h3>
-          <p class="project-desc">Secure administrative dashboard for managing city content and data — JWT-based auth, protected routes, and full CRUD for news, events, ordinances, and members, backed by structured MongoDB schemas.</p>
-          <div class="project-tags">
-            <span class="tag tag-a">Node.js</span>
-            <span class="tag tag-b">MongoDB</span>
-            <span class="tag tag-c">JWT Auth</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/janrelle24/crbDashboard" target="_blank" rel="noopener">source →</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head">
-            <span class="file-icon">JS</span>
-            <span class="file-name">cbr-website/</span>
-          </div>
-          <h3 class="project-title">CBR Public Website</h3>
-          <p class="project-desc">Dynamic public information platform connected to the dashboard via REST APIs, with real-time data fetching, search, pagination, and modular responsive UI components.</p>
-          <div class="project-tags">
-            <span class="tag tag-a">React</span>
-            <span class="tag tag-b">REST API</span>
-            <span class="tag tag-c">Responsive UI</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/janrelle24/cbrWebsite" target="_blank" rel="noopener">source →</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head">
-            <span class="file-icon">JS</span>
-            <span class="file-name">notebook-app/</span>
-          </div>
-          <h3 class="project-title">Notebook App</h3>
-          <p class="project-desc">Full-stack note-taking application with user authentication, complete CRUD functionality, and a modular back-end architecture with protected routes.</p>
-          <div class="project-tags">
-            <span class="tag tag-a">Node.js</span>
-            <span class="tag tag-b">Auth</span>
-            <span class="tag tag-c">CRUD</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/janrelle24/note" target="_blank" rel="noopener">source →</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ EXPERIENCE (git log style) ============ -->
-  <section id="experience" class="section">
-    <div class="gutter" aria-hidden="true"></div>
-    <div class="section-inner">
-      <p class="eyebrow"># log.txt</p>
+    <!-- JOURNEY -->
+    <section id="journey" class="section">
+      <p class="eyebrow">04 / Journey</p>
       <h2 class="section-title">Journey</h2>
-      <div class="git-log">
 
-        <div class="commit">
-          <div class="commit-line">
-            <span class="commit-hash">f4a1c02</span>
-            <span class="commit-date">2026</span>
-          </div>
-          <p class="commit-msg">Built <strong>CBR Dashboard System</strong> &amp; <strong>CBR Public Website</strong></p>
-          <p class="commit-body">Designed a full-stack, JWT-secured admin dashboard paired with a public-facing site consuming its REST APIs in real time.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <p class="timeline-date">2026</p>
+          <h3 class="timeline-title">E-Tanong AI</h3>
+          <p class="timeline-desc">Built a full-stack AI chat platform integrating Google Gemini to help people navigate government healthcare assistance programs — my first project combining AI integration with a production-style React frontend.</p>
         </div>
-
-        <div class="commit">
-          <div class="commit-line">
-            <span class="commit-hash">b8e2d91</span>
-            <span class="commit-date">2025</span>
-          </div>
-          <p class="commit-msg">Built the <strong>Notebook App</strong></p>
-          <p class="commit-body">First full-stack project with user authentication and complete CRUD functionality — where the back-end fundamentals clicked.</p>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <p class="timeline-date">2026</p>
+          <h3 class="timeline-title">CBR Dashboard System &amp; CBR Public Website</h3>
+          <p class="timeline-desc">Designed and built a full-stack, JWT-secured admin dashboard paired with a public site consuming its REST APIs in real time.</p>
         </div>
-
-        <div class="commit">
-          <div class="commit-line">
-            <span class="commit-hash">2c9f7a5</span>
-            <span class="commit-date">2023</span>
-          </div>
-          <p class="commit-msg">Graduated — <strong>BS Computer Science</strong></p>
-          <p class="commit-body">Caraga State University, Main Campus. Now building real-world projects and looking for a junior web developer role.</p>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <p class="timeline-date">2025</p>
+          <h3 class="timeline-title">Notebook App</h3>
+          <p class="timeline-desc">First full-stack project with user authentication and complete CRUD functionality — where the back-end fundamentals clicked.</p>
         </div>
-
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <p class="timeline-date">2023</p>
+          <h3 class="timeline-title">Graduated — BS Computer Science</h3>
+          <p class="timeline-desc">Caraga State University, Main Campus. Since then, building real-world projects and preparing for a junior web developer role.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ CONTACT ============ -->
-  <section id="contact" class="section">
-    <div class="gutter" aria-hidden="true"></div>
-    <div class="section-inner">
-      <p class="eyebrow"># contact.sh</p>
-      <h2 class="section-title">Let's Talk</h2>
-      <p class="contact-sub">Have a role, a project, or just want to say hi? Run the script below.</p>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <p class="eyebrow">05 / Contact</p>
+      <h2 class="section-title">Let's work together</h2>
+      <p class="contact-sub">I'm actively looking for a junior web developer role. If you have an opening, a project, or just want to connect, I'd love to hear from you.</p>
 
-      <form class="terminal-form" id="contact-form">
-        <div class="terminal-window">
-          <div class="terminal-row">
-            <span class="prompt">$</span>
-            <label for="name" class="sr-only">Name</label>
-            <input type="text" id="name" name="name" placeholder="--name 'Your Name'" required>
+      <div class="contact-grid">
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
           </div>
-          <div class="terminal-row">
-            <span class="prompt">$</span>
-            <label for="email" class="sr-only">Email</label>
-            <input type="email" id="email" name="email" placeholder="--email 'you@example.com'" required>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
           </div>
-          <div class="terminal-row terminal-row-textarea">
-            <span class="prompt">$</span>
-            <label for="message" class="sr-only">Message</label>
-            <textarea id="message" name="message" rows="3" placeholder="--message 'Say something...'" required></textarea>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="What would you like to discuss?" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-run">▶ run send-message</button>
+          <button type="submit" class="btn btn-primary btn-submit">Send message</button>
           <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-details">
+          <div class="contact-detail-row">
+            <p class="detail-label">Email</p>
+            <a href="mailto:lubianojanrelle@gmail.com">lubianojanrelle@gmail.com</a>
+          </div>
+          <div class="contact-detail-row">
+            <p class="detail-label">Phone</p>
+            <a href="tel:+639667245073">+63 966 724 5073</a>
+          </div>
+          <div class="contact-detail-row">
+            <p class="detail-label">GitHub</p>
+            <a href="https://github.com/janrelle24" target="_blank" rel="noopener">github.com/janrelle24 ↗</a>
+          </div>
+          <div class="contact-detail-row">
+            <p class="detail-label">Résumé</p>
+            <a href="resume.pdf" target="_blank" rel="noopener">Download PDF ↗</a>
+          </div>
         </div>
-      </form>
-
-      <div class="social-row">
-        <a href="https://github.com/janrelle24" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://v1-portfolio-website.netlify.app/projects" target="_blank" rel="noopener">Live Site</a>
-        <a href="mailto:lubianojanrelle@gmail.com">Email</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-</main>
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Janrelle Lubiano. Built with HTML, CSS &amp; JavaScript.</p>
+    </footer>
 
-<footer class="site-footer">
-  <p>// built with HTML, CSS &amp; JS — <span id="year"></span> Janrelle Lubiano</p>
-</footer>
+  </main>
+</div>
 
-<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
