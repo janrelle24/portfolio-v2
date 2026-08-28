@@ -1,4 +1,50 @@
 // ============================================
+// Preloader: counts 1% -> 100%, then reveals the site
+// ============================================
+(function preloader() {
+  const loader = document.getElementById('loader');
+  const countEl = document.getElementById('loader-count');
+  const ringEl = document.getElementById('loader-ring-fill');
+  if (!loader || !countEl || !ringEl) return;
+
+  const CIRCUMFERENCE = 339.29; // 2 * PI * r(54), matches CSS stroke-dasharray
+
+  const finish = () => {
+    document.body.classList.remove('is-loading');
+    loader.classList.add('is-hidden');
+    loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+    // Fallback removal in case transitionend doesn't fire
+    setTimeout(() => { if (loader.parentNode) loader.remove(); }, 700);
+  };
+
+  let percent = 0;
+  const duration = 10000; // ms, roughly how long the whole count takes
+  const start = performance.now();
+
+  function tick(now) {
+    const elapsed = now - start;
+    // gentle ease-out: stays close to linear so the count climbs steadily,
+    // only easing off right at the very end instead of rushing early
+    const t = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 1.5);
+    percent = Math.floor(eased * 100);
+
+    countEl.firstChild.textContent = String(percent);
+    ringEl.style.strokeDashoffset = String(CIRCUMFERENCE * (1 - eased));
+
+    if (t < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      countEl.firstChild.textContent = '100';
+      ringEl.style.strokeDashoffset = '0';
+      setTimeout(finish, 300); // brief pause at 100% before revealing
+    }
+  }
+
+  requestAnimationFrame(tick);
+})();
+
+// ============================================
 // Footer year
 // ============================================
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -36,7 +82,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
     'node.js': 'nodedotjs',
     'express.js': 'express',
     'html5': 'html5',
-    'css3': 'css3',
+    'css3': 'css',
     'tailwind css': 'tailwindcss',
     'mongodb': 'mongodb',
     'jwt authentication': 'jsonwebtokens',
