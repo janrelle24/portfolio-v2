@@ -4,6 +4,65 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // ============================================
+// Scroll-reveal: sections and project cards fade/rise
+// into view as the user scrolls to them
+// ============================================
+(function scrollReveal() {
+  const targets = document.querySelectorAll('.reveal');
+  if (!targets.length) return;
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target); // animate in once, don't repeat on re-scroll
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  targets.forEach(el => revealObserver.observe(el));
+})();
+
+// ============================================
+// Tech icons for skill chips & project tags
+// Matches visible text (case-insensitive) to a Simple Icons slug.
+// Icons render in each brand's official color automatically.
+// Add new entries here whenever a new chip/tag is added.
+// ============================================
+(function addTechIcons() {
+  const iconMap = {
+    'javascript': 'javascript',
+    'react': 'react',
+    'node.js': 'nodedotjs',
+    'express.js': 'express',
+    'html5': 'html5',
+    'css3': 'css3',
+    'tailwind css': 'tailwindcss',
+    'mongodb': 'mongodb',
+    'jwt authentication': 'jsonwebtokens',
+    'jwt auth': 'jsonwebtokens',
+    'postman': 'postman',
+    'google gemini ai': 'googlegemini',
+    'gemini ai': 'googlegemini',
+    'github': 'github'
+  };
+
+  document.querySelectorAll('.chip, .tag').forEach(el => {
+    const key = el.textContent.trim().toLowerCase();
+    const slug = iconMap[key];
+    if (!slug) return; // no known brand icon — leave as plain text (e.g. "Clean Code", "CRUD")
+
+    const icon = document.createElement('img');
+    icon.src = `https://cdn.simpleicons.org/${slug}`;
+    icon.alt = '';
+    icon.loading = 'lazy';
+    icon.className = el.classList.contains('chip') ? 'chip-icon' : 'tag-icon';
+    icon.onerror = () => icon.remove(); // fail gracefully if a slug ever changes
+    el.prepend(icon);
+  });
+})();
+
+// ============================================
 // Scroll progress indicator
 // ============================================
 (function scrollProgress() {
@@ -46,6 +105,12 @@ document.getElementById('year').textContent = new Date().getFullYear();
     btn.addEventListener('click', () => {
       const current = root.getAttribute('data-theme');
       applyTheme(current === 'dark' ? 'light' : 'dark');
+
+      toggles.forEach(t => {
+        t.classList.remove('switching');
+        void t.offsetWidth; // restart animation even if clicked again quickly
+        t.classList.add('switching');
+      });
     });
   });
 })();
@@ -127,7 +192,7 @@ const mobileToggle = document.getElementById('mobile-toggle');
 const sidebar = document.querySelector('.sidebar');
 
 if (mobileToggle) {
-  mobileToggle.addEventListener('click', () => {
+  mobileToggle.addEventListener('click', () => {  
     const isOpen = sidebar.classList.toggle('open');
     mobileToggle.setAttribute('aria-expanded', String(isOpen));
   });

@@ -4,7 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Janrelle Lubiano — Web Developer</title>
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="Junior web developer building full-stack apps with React, Node.js, and MongoDB. View my projects and get in touch.">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+<!-- Open Graph / social preview -->
+<!-- TODO: once deployed, replace with your real domain, e.g. https://janrellelubiano.com/ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://your-domain-here.com/">
+<meta property="og:title" content="Janrelle Lubiano — Web Developer">
+<meta property="og:description" content="Junior web developer building full-stack apps with React, Node.js, and MongoDB. View my projects and get in touch.">
+<meta property="og:image" content="img/og-image.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Janrelle Lubiano — Web Developer">
+<meta name="twitter:description" content="Junior web developer building full-stack apps with React, Node.js, and MongoDB.">
+<meta name="twitter:image" content="img/og-image.jpg">
+
+<link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -42,10 +63,10 @@
 
     <div class="sidebar-bottom">
       <a href="mailto:lubianojanrelle@gmail.com">lubianojanrelle@gmail.com</a>
-      <a href="tel:+639667245073">+63 966 724 5073</a>
+      <a href="tel:+639382988902">+63 938 298 8902</a>
       <div class="sidebar-links">
         <a href="https://github.com/janrelle24" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+        <a href="asset/Lubiano_Janrelle.pdf" target="_blank" rel="noopener">Résumé ↗</a>
       </div>
     </div>
   </aside>
@@ -78,7 +99,7 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section">
+    <section id="about" class="section reveal">
       <p class="eyebrow">01 / About</p>
       <h2 class="section-title">About</h2>
       <div class="about-grid">
@@ -101,7 +122,7 @@
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="section">
+    <section id="skills" class="section reveal">
       <p class="eyebrow">02 / Skills</p>
       <h2 class="section-title">Skills &amp; Tools</h2>
 
@@ -125,6 +146,7 @@
             <span class="chip">SQL</span>
             <span class="chip">REST APIs</span>
             <span class="chip">JWT Authentication</span>
+            <span class="chip">Postman</span>
           </div>
         </div>
         <div class="skill-group">
@@ -147,13 +169,13 @@
     </section>
 
     <!-- WORK -->
-    <section id="work" class="section">
+    <section id="work" class="section reveal">
       <p class="eyebrow">03 / Work</p>
       <h2 class="section-title">Selected Work</h2>
 
       <div class="work-list">
 
-        <article class="work-item">
+        <article class="work-item reveal" style="--reveal-delay: 0.0s">
           <div class="work-thumb">
             <!-- TODO: replace with a real screenshot, e.g. img/etanong-ai.jpg -->
             <img src="img/e-tanong.png" alt="E-Tanong AI chat interface screenshot" onerror="this.parentElement.classList.add('no-thumb')">
@@ -165,15 +187,23 @@
             <p class="work-desc">A full-stack AI chat platform that helps people understand government healthcare assistance programs and application requirements. Built with a modern chat interface — light/dark mode, suggested questions, typing indicators, and message history — backed by a Node.js/Express service integrating Google Gemini for grounded, knowledge-based responses. Designed to guide clearly without diagnosing conditions or prescribing treatment.</p>
             <div class="work-tags">
               <span class="tag">React</span>
+              <span class="tag">Tailwind css</span>
               <span class="tag">Express.js</span>
               <span class="tag">Gemini AI</span>
             </div>
-            <!-- TODO: replace with the real repository URL once published -->
-            <a class="work-link" href="https://github.com/janrelle24" target="_blank" rel="noopener">View source ↗</a>
+            <div class="work-links">
+
+              <!-- SAMPLE URL — replace with your real deployed link --><a class="work-link" href="https://e-tanong-ai-demo.vercel.app" target="_blank" rel="noopener">Live Demo ↗</a>
+
+              <!-- TODO: replace with the real repository URL once published -->
+
+              <a class="work-link" href="https://github.com/janrelle24" target="_blank" rel="noopener">View source ↗</a>
+
+            </div>
           </div>
         </article>
 
-        <article class="work-item">
+        <article class="work-item reveal" style="--reveal-delay: 0.08s">
           <div class="work-thumb">
             <img src="img/cbrDashboard.png" alt="CBR Dashboard System screenshot" onerror="this.parentElement.classList.add('no-thumb')">
             <span class="thumb-fallback">CBR<br>Dashboard</span>
@@ -187,11 +217,18 @@
               <span class="tag">MongoDB</span>
               <span class="tag">JWT Auth</span>
             </div>
-            <a class="work-link" href="https://github.com/janrelle24/crbDashboard" target="_blank" rel="noopener">View source ↗</a>
+            <div class="work-links">
+
+              <a class="work-link" href="https://crbdashboard.onrender.com" target="_blank" rel="noopener">Live Demo ↗</a>
+
+              
+              <a class="work-link" href="https://github.com/janrelle24/crbDashboard" target="_blank" rel="noopener">View source ↗</a>
+
+            </div>
           </div>
         </article>
 
-        <article class="work-item">
+        <article class="work-item reveal" style="--reveal-delay: 0.16s">
           <div class="work-thumb">
             <img src="img/cbr-public-website.png" alt="CBR Public Website screenshot" onerror="this.parentElement.classList.add('no-thumb')">
             <span class="thumb-fallback">CBR<br>Website</span>
@@ -201,15 +238,22 @@
             <h3 class="work-title">CBR Public Website</h3>
             <p class="work-desc">The public-facing counterpart to the dashboard — a dynamic information platform with real-time data fetching via REST APIs, plus search, pagination, and modular responsive UI components.</p>
             <div class="work-tags">
-              <span class="tag">React</span>
+              <span class="tag">JavaScript</span>
               <span class="tag">REST API</span>
               <span class="tag">Responsive UI</span>
             </div>
-            <a class="work-link" href="https://github.com/janrelle24/cbrWebsite" target="_blank" rel="noopener">View source ↗</a>
+            <div class="work-links">
+
+              <a class="work-link" href="https://cbr-public-website.netlify.app/" target="_blank" rel="noopener">Live Demo ↗</a>
+
+              
+              <a class="work-link" href="https://github.com/janrelle24/cbrWebsite" target="_blank" rel="noopener">View source ↗</a>
+
+            </div>
           </div>
         </article>
 
-        <article class="work-item">
+        <article class="work-item reveal" style="--reveal-delay: 0.24s">
           <div class="work-thumb">
             <img src="img/notebook.png" alt="Notebook App screenshot" onerror="this.parentElement.classList.add('no-thumb')">
             <span class="thumb-fallback">Notebook<br>App</span>
@@ -223,7 +267,14 @@
               <span class="tag">Authentication</span>
               <span class="tag">CRUD</span>
             </div>
-            <a class="work-link" href="https://github.com/janrelle24/note" target="_blank" rel="noopener">View source ↗</a>
+            <div class="work-links">
+
+              <a class="work-link" href="https://note-application-wquo.onrender.com" target="_blank" rel="noopener">Live Demo ↗</a>
+
+              
+              <a class="work-link" href="https://github.com/janrelle24/note" target="_blank" rel="noopener">View source ↗</a>
+
+            </div>
           </div>
         </article>
 
@@ -231,7 +282,7 @@
     </section>
 
     <!-- JOURNEY -->
-    <section id="journey" class="section">
+    <section id="journey" class="section reveal">
       <p class="eyebrow">04 / Journey</p>
       <h2 class="section-title">Journey</h2>
 
@@ -264,7 +315,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section">
+    <section id="contact" class="section reveal">
       <p class="eyebrow">05 / Contact</p>
       <h2 class="section-title">Let's work together</h2>
       <p class="contact-sub">I'm actively looking for a junior web developer role. If you have an opening, a project, or just want to connect, I'd love to hear from you.</p>
@@ -273,11 +324,11 @@
         <form class="contact-form" id="contact-form">
           <div class="form-row">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
+            <input type="text" id="name" name="user_name" placeholder="Your name" required>
           </div>
           <div class="form-row">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <input type="email" id="email" name="user_email" placeholder="you@example.com" required>
           </div>
           <div class="form-row">
             <label for="message">Message</label>
@@ -294,7 +345,7 @@
           </div>
           <div class="contact-detail-row">
             <p class="detail-label">Phone</p>
-            <a href="tel:+639667245073">+63 966 724 5073</a>
+            <a href="tel:+639382988902">+63 938 298 8902</a>
           </div>
           <div class="contact-detail-row">
             <p class="detail-label">GitHub</p>
@@ -302,7 +353,7 @@
           </div>
           <div class="contact-detail-row">
             <p class="detail-label">Résumé</p>
-            <a href="resume.pdf" target="_blank" rel="noopener">Download PDF ↗</a>
+            <a href="asset/Lubiano_Janrelle.pdf" target="_blank" rel="noopener">Download PDF ↗</a>
           </div>
         </div>
       </div>
