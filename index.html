@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Janrelle Lubiano — Web Developer</title>
+<title>Janrelle Lubiano — Junior Full-Stack Developer</title>
 <meta name="description" content="Junior web developer building full-stack apps with React, Node.js, and MongoDB. View my projects and get in touch.">
 
 <!-- Favicon -->
@@ -12,10 +12,9 @@
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-<!-- Open Graph / social preview -->
-<!-- TODO: once deployed, replace with your real domain, e.g. https://janrellelubiano.com/ -->
+
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://your-domain-here.com/">
+<meta property="og:url" content="https://v2-portfolio-website.netlify.app/">
 <meta property="og:title" content="Janrelle Lubiano — Web Developer">
 <meta property="og:description" content="Junior web developer building full-stack apps with React, Node.js, and MongoDB. View my projects and get in touch.">
 <meta property="og:image" content="img/og-image.jpg">
@@ -61,7 +60,7 @@
       </div>
       <p class="sidebar-name">Janrelle L. Lubiano</p>
       <p class="sidebar-role">Web Developer</p>
-      <p class="status-pill"><span class="status-dot"></span>Available for junior roles</p>
+      <p class="status-pill"><span class="status-dot"></span>Junior Full-Stack Developer</p>
       <p class="local-time" id="local-time"></p>
     </div>
 
@@ -99,11 +98,10 @@
     <!-- HERO -->
     <section class="hero">
       <p class="hero-eyebrow">Web Developer · Tubay, Agusan del Norte, PH</p>
-      <h1 class="hero-title">Building full-stack web apps, one clean commit at a time.</h1>
+      <h1 class="hero-title">Junior Full-Stack Developer building practical web applications with React, Node.js, MongoDB and Supabase.</h1>
       <p class="hero-sub">
-        Junior web developer with hands-on experience shipping real applications —
-        secure authentication, REST APIs, and structured databases, backed by a
-        Computer Science degree and a habit of writing code I'm proud to hand off.
+        CS graduate with hands-on experience building and deploying full-stack applications, REST APIs, authentication systems, and AI-powered applications. 
+        Currently looking for my first professional software development role.
       </p>
       <div class="hero-actions">
         <a href="#work" class="btn btn-primary">View my work</a>
@@ -120,7 +118,7 @@
           I'm a detail-oriented junior web developer who enjoys taking a project from a
           blank schema to something people can actually use. My recent work spans
           JWT-based authentication, REST API integration, and full CRUD systems backed
-          by structured MongoDB and SQL data models — with just as much attention paid
+          by structured MongoDB, Supabase and PostgreSQL data models — with just as much attention paid
           to the responsive front-end that sits on top. I'm still early in my career and
           treat that as an advantage: I learn fast, ask good questions, and care about
           writing code that's easy for the next person to read.
@@ -128,7 +126,7 @@
         <dl class="about-facts">
           <div class="fact-row"><dt>Education</dt><dd>BS Computer Science, Caraga State University (2023)</dd></div>
           <div class="fact-row"><dt>Location</dt><dd>Tubay, Agusan del Norte, Philippines</dd></div>
-          <div class="fact-row"><dt>Focus</dt><dd>React, Node.js, MongoDB</dd></div>
+          <div class="fact-row"><dt>Focus</dt><dd>React, Node.js, MongoDB, Supabase</dd></div>
           <div class="fact-row"><dt>Looking for</dt><dd>Junior web developer roles</dd></div>
         </dl>
       </div>
@@ -150,13 +148,16 @@
             <span class="chip">HTML5</span>
             <span class="chip">CSS3</span>
             <span class="chip">Tailwind CSS</span>
+            <span class="chip">PWA</span>
+            <span class="chip">IndexedDB</span>
           </div>
         </div>
         <div class="skill-group">
           <p class="skill-group-label">Data &amp; APIs</p>
           <div class="chip-row">
             <span class="chip">MongoDB</span>
-            <span class="chip">SQL</span>
+            <span class="chip">Supabase</span>
+            <span class="chip">PostgreSQL</span>
             <span class="chip">REST APIs</span>
             <span class="chip">JWT Authentication</span>
             <span class="chip">Postman</span>
@@ -165,19 +166,22 @@
         <div class="skill-group">
           <p class="skill-group-label">AI &amp; Integrations</p>
           <div class="chip-row">
-            <span class="chip">Google Gemini AI</span>
-            <span class="chip">Knowledge-Based AI Design</span>
+            <span class="chip">Google Gemini API</span>
+            <span class="chip">RAG</span>
+            <span class="chip">Embeddings</span>
+            <span class="chip">Document chunking</span>
           </div>
         </div>
         <div class="skill-group">
-          <p class="skill-group-label">How I Work</p>
+          <p class="skill-group-label">Tools &amp; Deployment</p>
           <div class="chip-row">
-            <span class="chip">Clean Code</span>
-            <span class="chip">Self-Directed Learning</span>
-            <span class="chip">Problem Solving</span>
-            <span class="chip">Attention to Detail</span>
+            <span class="chip">Git</span>
+            <span class="chip">Github</span>
+            <span class="chip">Netlify</span>
+            <span class="chip">Render</span>
           </div>
         </div>
+        
       </div>
     </section>
 
@@ -190,14 +194,50 @@
 
         <article class="work-item reveal" style="--reveal-delay: 0.0s">
           <div class="work-thumb">
-            <!-- TODO: replace with a real screenshot, e.g. img/etanong-ai.jpg -->
+            <img src="img/DevVault.png" alt="E-Tanong AI chat interface screenshot" onerror="this.parentElement.classList.add('no-thumb')">
+            <span class="thumb-fallback">DevVault</span>
+          </div>
+          <div class="work-body">
+            <p class="work-index">P01 — 2026</p>
+            <h3 class="work-title">DevVault</h3>
+            <p class="work-desc">
+              A full-stack documentation hub for organizing developer guides,
+              commands, and troubleshooting notes. Features JWT authentication,
+              email OTP verification, role-based access control, and an
+              installable Progressive Web App with offline document access
+              and bookmark synchronization using IndexedDB.</p>
+            <div class="work-tags">
+              <span class="tag">React</span>
+              <span class="tag">Vite</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">JWT</span>
+              <span class="tag">PWA</span>
+            </div>
+            <div class="work-links">
+
+              <a class="work-link" href="https://devvault-stack.netlify.app/" target="_blank" rel="noopener">Live Demo ↗</a>
+              <a class="work-link" href="https://github.com/janrelle24/DevVault" target="_blank" rel="noopener">View source ↗</a>
+
+            </div>
+          </div>
+        </article>
+
+        <article class="work-item reveal" style="--reveal-delay: 0.0s">
+          <div class="work-thumb">
             <img src="img/e-tanong.png" alt="E-Tanong AI chat interface screenshot" onerror="this.parentElement.classList.add('no-thumb')">
             <span class="thumb-fallback">E-Tanong<br>AI</span>
           </div>
           <div class="work-body">
             <p class="work-index">P01 — 2026</p>
             <h3 class="work-title">E-Tanong AI</h3>
-            <p class="work-desc">A full-stack AI chat platform that helps people understand government healthcare assistance programs and application requirements. Built with a modern chat interface — light/dark mode, suggested questions, typing indicators, and message history — backed by a Node.js/Express service integrating Google Gemini for grounded, knowledge-based responses. Designed to guide clearly without diagnosing conditions or prescribing treatment.</p>
+            <p class="work-desc">
+              AI-powered inquiry assistant using a RAG pipeline to ground Gemini responses in a curated PDF knowledge base. 
+              The application processes documents into chunks and embeddings, retrieves relevant context for each query, and passes that context to Gemini to generate knowledge-grounded responses. 
+              Built with React, Node.js, Express.</p>
             <div class="work-tags">
               <span class="tag">React</span>
               <span class="tag">Tailwind css</span>
@@ -206,10 +246,7 @@
             </div>
             <div class="work-links">
 
-              <!-- SAMPLE URL — replace with your real deployed link --><a class="work-link" href="https://e-tanong-ai-demo.vercel.app" target="_blank" rel="noopener">Live Demo ↗</a>
-
-              <!-- TODO: replace with the real repository URL once published -->
-
+              <a class="work-link" href="https://e-tanongai.netlify.app/" target="_blank" rel="noopener">Live Demo ↗</a>
               <a class="work-link" href="https://github.com/janrelle24/ai-inquiry-assistant" target="_blank" rel="noopener">View source ↗</a>
 
             </div>
@@ -315,8 +352,20 @@
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <p class="timeline-date">2025</p>
-          <h3 class="timeline-title">Notebook App</h3>
-          <p class="timeline-desc">First full-stack project with user authentication and complete CRUD functionality — where the back-end fundamentals clicked.</p>
+          <h3 class="timeline-title">Returned to Software Development - Notebook App</h3>
+          <p class="timeline-desc">Rebuilt programming fundamentals and developed the Notebook application. First full-stack project with user authentication and complete CRUD functionality — where the back-end fundamentals clicked.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <p class="timeline-date">2024</p>
+          <h3 class="timeline-title">Philippine Statistics Authority</h3>
+          <p class="timeline-desc">Statistical Researcher — field research, surveys, data collection and validation.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <p class="timeline-date">2023-2024</p>
+          <h3 class="timeline-title">Philippine Statistics Authority</h3>
+          <p class="timeline-desc">PhilSys Register Kit Operator — Operated registration software and biometric equipment, verified data, and supported citizens through National ID registration.</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-marker"></div>
