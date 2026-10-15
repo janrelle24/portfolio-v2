@@ -242,7 +242,7 @@ if (mobileToggle) {
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    emailjs.sendForm('service_t75qy53', 'template_jikoxf8', form)
+    emailjs.sendForm(service_t75qy53, template_jikoxf8, form)
       .then(() => {
         status.textContent = "✓ Message sent — I'll get back to you soon.";
         status.classList.add('success');
